@@ -1,2 +1,0 @@
-# BookWorms
-Book Recommendation Website
