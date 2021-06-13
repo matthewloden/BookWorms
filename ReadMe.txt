@@ -3,6 +3,8 @@ Flask and Linux for the backend,
 and HTML, CSS, and Javascript for the
 front-end
 
+In addition to the requirements file being run, you must also unzip the files within the .vneu directory
+
 The tree structure for the project is as
 follows:
 C:.
