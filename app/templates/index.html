@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="Book Worms, Reading, Books">
+    <meta name="author" content="Group 15">
+    <title>BookWorms</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/logoIcon.ico/')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+<style>
+        #headerImg{
+            overflow: hidden;
+            text-align: center;
+            height: 820px;
+            background:url("{{ url_for('static', filename='img/headerImg.png') }}") no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        #indexRow1 .rowImg{
+            float: left;
+            background:url("{{ url_for('static', filename='img/indexDiagnosticImg.jpg') }}") no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        #indexRow2 .rowImg{
+            background:url("{{ url_for('static', filename='img/indexPlaylistImg.png') }}") no-repeat;
+            background-position: center;
+            background-size: cover;
+            float: right;
+        }
+
+        #indexRow3{
+            background:url("{{ url_for('static', filename='img/headerImg.png') }}") no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+        #indexRow4 .rowImg{
+            float: left;
+            background:url("{{ url_for('static', filename='img/books.jpg') }}") no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        </style>
+
+
+</head>
+<body>
+    <!-- BUTTON TO TOP -->
+    <button id="buttonToTop">
+        <i class="material-icons" title="Return to top of page">expand_less</i>
+    </button>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="logo">
+            <nav>
+                <ul>
+                    <li class="current"><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('diagnostic') }}">Preferences</a></li>
+                    <li><a href="{{ url_for('playlist') }}">Playlist</a></li>
+                    <li><a href="{{ url_for('search') }}">Search</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class = "container" style = "color:white;">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </header>
+    <!-- HEADER IMG -->
+    <section id="space"></section>
+    <section id="headerImg">
+        <div>
+            <img src="{{url_for('static', filename='img/bookWormsTitle.png')}}" alt="Title Card">
+        </div>
+        <div>
+            <a id="learnMoreButton">LEARN MORE</a>
+        </div>
+    </section>
+    <!-- INFO TABS -->
+    <section id="info">
+        <section id="indexRow1" class="indexRows">
+            <div class="rowImg"></div>
+            <div class="rowButton">
+                <div class="container">
+                    <div class="button">
+                        <a href="{{ url_for('diagnostic') }}">User Preferences</a>
+                    </div>
+                    <h1>Get customized book recommendations based on your book preferences as well as your reading skill</h1>
+                </div>
+            </div>
+        </section>
+        <section id="indexRow2" class="indexRows">
+            <div class="rowImg"></div>
+            <div class="rowButton">
+                <div class="container">
+                    <div class="button">
+                        <a href="{{ url_for('playlist') }}">Playlist</a>
+                    </div>
+                    <h1>Listen to music while you're reading</h1>
+                </div>
+            </div>
+        </section>
+        <section id="indexRow3" class="indexRows">
+            <div class="container">
+                <div class="rowBackground">
+                    <div class="button">
+                        <a href="{{ url_for('search') }}">Search</a>
+                    </div>
+                    <h1>Looking for a specific book? Search for it here!</h1>
+                </div>
+            </div>
+        </section>
+        <section id="indexRow4" class="indexRows">
+            <div class="rowImg"></div>
+            <div class="rowButton">
+                <div class="container">
+                    <div class="button">
+                        <a href="{{ url_for('logout') }}">Log In</a>
+                    </div>
+                    <h1>Want to store your book recommendations? Log in here or, if you're new, create a new account!</h1>
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer>
+       <div id="google_translate_element"></div>
+        <script>
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+            }
+        </script>
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+    </footer>
+
+
+    
+
+    <!-- SCRIPTS -->
+    <script>
+        const buttonToTop = document.querySelector("#buttonToTop");
+
+        buttonToTop.addEventListener("click", function(){
+            window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+        });
+
+        var mybutton = document.getElementById("buttonToTop");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+            mybutton.style.display = "block";}
+        else {mybutton.style.display = "none";}
+        }
+    </script>
+    <script>
+        const learnMoreButton = document.querySelector("#learnMoreButton");
+
+        learnMoreButton.addEventListener("click", function(){
+            window.scrollTo({top: 820, left: 0, behavior: "smooth"});
+        });
+
+    </script>
+    
+    
+</body>
+</html>

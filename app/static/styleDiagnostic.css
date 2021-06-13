@@ -1,0 +1,193 @@
+body{
+    font: 15px/1.5 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #ff8095;
+    background:url('../img/headerImg.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+
+/* ------ */
+/* Global */
+/* ------ */
+
+.container{
+    width:80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* ------- */
+/* Utility */
+/* ------- */
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#buttonToTop{
+    position:fixed;
+    z-index: 1;
+}
+
+#buttonToTop{
+    display: none;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: #ff4a90;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    animation: fadeIn .5s linear;
+}
+
+#buttonToTop:hover{
+    background-color: #bb0c4f;
+}
+
+/* ------ */
+/* Header */
+/* ------ */
+
+header{
+    background: rgb(255,85,113);
+    background: linear-gradient(90deg, #ff344b 0%, #ff6a97 100%);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+}
+
+header img{
+    float: left;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+header nav{
+    margin-top: 40px;
+}
+
+header a{
+    color:#ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 16px;
+}
+
+header ul{
+    list-style: none;
+    text-align: center;
+}
+
+header li{
+    display: inline;
+    padding: 0px 20px 0px 20px;
+    display: inline-block;
+}
+
+header .current a{
+    color:#9b0040;
+}
+
+header a:hover{
+    color:#9b0040;
+}
+
+#space{
+    height: 100px;
+}
+
+/* ---------- */
+/* DIAGNOSTIC */
+/* ---------- */
+
+#questions{
+    margin-top: 20px;
+    font-size: 20px;
+    position: relative;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#questions .container{
+    background: #ff8ba4;
+    padding: 15px;
+    border: 6px solid #000000;
+    border-radius: 20px;
+}
+
+#questions legend{
+    font-weight: 800;
+}
+
+#questions fieldset{
+    border-color: #00000000;
+}
+
+#questions .buttonContainer{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#questions #submitButton{
+    text-decoration: none;
+    color: #ffffff;
+    border: 4px solid black;
+    background-color: #ff4a90;
+    font: 18px/1.5 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 16px 30px;
+    border-radius: 28px;
+    margin-right: 20px;
+}
+
+#questions #submitButton:hover{
+    text-decoration: none;
+    background-color: #bb0c4f;
+}
+
+#questions #readTestButton{
+    position: absolute;
+    top: 20px;
+    right: 10%;
+    text-decoration: none;
+    color: #ffffff;
+    border: 4px solid black;
+    background-color: #ff4a90;
+    font: 13px/1.5 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 12px 20px;
+    border-radius: 18px;
+}
+
+#questions #readTestButton:hover{
+    text-decoration: none;
+    background-color: #bb0c4f;
+}

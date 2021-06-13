@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BookWorms - Search</title>
+    <link href=href="{{url_for('static', filename='advsearch.css')}}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="Book Worms, Reading, Books, Search, Advanced">
+    <meta name="author" content="Matthew Loden">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/logoIcon.ico/')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='advsearch.css')}}">
+   
+    <style>
+        body{
+            font: 15px/1.5 'Lato', sans-serif;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
+            background:url("{{ url_for('static', filename='img/headerImg.png') }}");
+        }
+    </style>
+</head>
+
+<body>
+    <!-- BUTTON TO TOP -->
+    <button id="buttonToTop">
+        <i class="material-icons" title="Return to top of page">expand_less</i>
+    </button>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+           <img src="{{url_for('static', filename='img/logo.png')}}" alt="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('diagnostic') }}">Preferences</a></li>
+                    <li><a href="{{ url_for('playlist') }}">Playlist</a></li>
+                    <li class="current"><a href="{{ url_for('search') }}">Search</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- SEARCH -->
+    <div id="bodycard">
+        <div id="title">
+            <h1>
+                <b>Advanced Search</b>
+            </h1>
+        </div>
+        <div id="searchbox">
+            <input type="search" placeholder="Enter Search" name="searchbar" id="searchbarfield">
+            <button type = "button" id="mybtn" onclick="getSearch()">Search</button>
+        </div>
+        <div id = "optionsbox">
+            <h2 style = "text-align: center;">
+                Search Options
+            </h2>
+            <ul style = "text-align: center;">
+                <input type = "radio" name = "option" id  = "titlechkbox" value = "&intitle:" checked> Search By Title 
+                <input type = "radio" name = "option" id  = "authorchkbox" value = "&inauthor"> Search By Author 
+                <input type = "radio" name = "option" id  = "pubchkbox" value = "&inpublisher:"> Search By Publisher
+                <input type = "radio" name = "option" id  = "catchkbox" value = "&subject:"> Search By Subject
+                <input type = "radio" name = "option" id  = "isbnchkbox" value = "&isbn:"> Search By ISBN
+            </ul>
+            <h2 style = "text-align: center;">
+                Refine Search Parameters
+            </h2>
+            <ul style="text-align: center;">
+                <select id="languagefilter" name="languagefilter">
+                    <option value="na">Language Selection...</option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="zh">Chinese</option>
+                    <option value="hi">Hindi</option>
+                </select>
+            </ul>
+
+        </div>
+    </div>
+
+    <script>
+        const buttonToTop = document.querySelector("#buttonToTop");
+
+        buttonToTop.addEventListener("click", function(){
+            window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+        });
+
+        var mybutton = document.getElementById("buttonToTop");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+            mybutton.style.display = "block";}
+        else {mybutton.style.display = "none";}
+        }
+    </script>
+    <script src="{{url_for('static', filename='advsearch.js')}}"></script>
+</body>
+</html>

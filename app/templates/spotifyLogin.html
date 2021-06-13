@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="Book Worms, Reading, Books">
+    <meta name="author" content="Raquel Barahona">
+    <title>BookWorms - Spotify Log In</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/logoIcon.ico/')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='stylePlaylist.css')}}">
+    
+    <style>
+        body{
+            font: 15px/1.5 'Lato', sans-serif;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
+            background:url("{{ url_for('static', filename='img/headerImg.png') }}");
+        }
+        #bodycard {
+        font: 15px/1.5 'Lato', sans-serif;
+        align:center
+        margin-top: 25px;
+        padding: 1rem;
+        margin-left: 28rem;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+        width: 40%;
+        height: auto;
+        border-radius: 25px;
+        border: 5px solid black;
+        top: 105px;
+        background-color: #ff6486;
+    }
+      .img-container {
+        text-align: center;
+      }
+      #space{
+        height: 70px;
+    }
+    </style>
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('diagnostic') }}">Preferences</a></li>
+                    <li class="current"><a href="{{ url_for('playlist') }}">Playlist</a></li>
+                    <li><a href="{{ url_for('search') }}">Search</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="space"></section>
+    <section id="space"></section>
+    <div id="bodycard">
+        <h3 style=font-size:20px align="center"><a href="{{ auth }}">Sign into your Spotify account</a></h3>
+        <div class="img-container">
+            <img src="{{url_for('static', filename='img/spotifyLogo.png')}}" alt="Spotify logo" class="center" >
+        </div>
+        <p style=font-size:20px align="center"> No Spotify account? We still have some playlists for you!</p>
+        <p  style=font-size:20px align="center"><a href="{{ url_for('default_playlist') }}"> Let's go!</a></p>
+    </div>
+
+</body>
+</html>

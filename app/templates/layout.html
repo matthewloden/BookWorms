@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="Book Worms, Reading, Books">
+    <meta name="author" content="Group 15">
+    <title>{{title}}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/logoIcon.ico/')}}">
+    <!-- Bootstrap CSS -->
+    <link rel = "stylesheet" type = "text/css"  href = "{{url_for('static', filename = 'bootstrap-4.5.0-dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+</head>
+<body>
+    <!-- BUTTON TO TOP -->
+    <button id="buttonToTop">
+        <i class="material-icons" title="Return to top of page">expand_less</i>
+    </button>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="logo">
+        </div>
+    </header>
+
+
+    <div id= "headerImg" style="padding-top:10%;text-align: left; color: #ffffff;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+              <div class = "alert alert-{{category}}">
+              {{ message }}
+              </div>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}   
+    </div>
+
+
+
+ 
+
+    
+
+    <footer>
+       <div id="google_translate_element"></div>
+        <script>
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+            }
+        </script>
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+    </footer>
+
+
+    
+    <!-- SCRIPTS -->
+    <script>
+        const buttonToTop = document.querySelector("#buttonToTop");
+
+        buttonToTop.addEventListener("click", function(){
+            window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+        });
+
+        var mybutton = document.getElementById("buttonToTop");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+            mybutton.style.display = "block";}
+        else {mybutton.style.display = "none";}
+        }
+    </script>
+    <script>
+        const learnMoreButton = document.querySelector("#learnMoreButton");
+
+        learnMoreButton.addEventListener("click", function(){
+            window.scrollTo({top: 820, left: 0, behavior: "smooth"});
+        });
+
+    </script>
+    <!--Bootstrap JS-->
+    <script type = "text/js" src = "{{url_for('static', filename = 'bootstrap-4.5.0-dist/js/bootstrap.min.js')}}"> </script>
+
+    
+</body>
+</html>

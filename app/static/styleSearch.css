@@ -1,0 +1,56 @@
+#searchBox {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+.searchFunction {
+    border: 10px;
+    padding: 8px;
+    }
+      
+#searchResults {
+    padding: 8px;
+    border: none;
+}
+
+.textcard {
+    width: 45%;
+    float: right;
+    padding: 2px;
+    border: none;
+    margin-right: 0px;
+}
+
+.imgcard {
+    width: 45%;
+    float: left;
+    padding: 2px;
+    border: none;
+    height: auto;
+    object-fit: contain;
+}
+
+.h1 {
+    text-align: center;
+    font-size: smaller;
+    color: black;
+}
+
+.p {
+    text-align: center;
+    font-size: x-small;
+    font-style: italic;
+    color: gray;
+}
+
+
+.card {
+    background: white;
+    border-color: black;
+    border: 1px solid;
+    overflow: hidden;
+    height: 150px;
+    width: 255px;
+    word-wrap: break-word;
+}

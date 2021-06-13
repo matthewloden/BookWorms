@@ -1,0 +1,245 @@
+body{
+    font: 15px/1.5 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: #ff8095;
+    scroll-behavior: smooth;
+}
+
+/* ------ */
+/* Global */
+/* ------ */
+
+.container{
+    width:80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* ------- */
+/* Utility */
+/* ------- */
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#buttonToTop{
+    position:fixed;
+    z-index: 1;
+}
+
+#buttonToTop{
+    display: none;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: #ff4a90;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    animation: fadeIn .5s linear;
+}
+
+#buttonToTop:hover{
+    background-color: #bb0c4f;
+}
+
+/* ------ */
+/* Header */
+/* ------ */
+
+header{
+    background: rgb(255,85,113);
+    background: linear-gradient(90deg, #ff344b 0%, #ff6a97 100%);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+}
+
+header img{
+    float: left;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+header nav{
+    margin-top: 40px;
+}
+
+header a{
+    color:#ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 16px;
+}
+
+header ul{
+    list-style: none;
+    text-align: center;
+}
+
+header li{
+    display: inline;
+    padding: 0px 20px 0px 20px;
+    display: inline-block;
+}
+
+header .current a{
+    color:#9b0040;
+}
+
+header a:hover{
+    color:#9b0040;
+}
+
+/* ---------- */
+/* HEADER IMG */
+/* ---------- */
+
+#space{
+    height: 100px;
+}
+
+#headerImg{
+    overflow: hidden;
+    text-align: center;
+    height: 820px;
+    background:url("../static/img/headerImg.png") no-repeat 0px 0px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#headerImg img{
+    position: relative;
+    top: 80px;
+}
+
+#headerImg a{
+    position: relative;
+    top: 150px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 4px solid black;
+    background-color: #ff4a90;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 14px 25px;
+    border-radius: 22px;
+}
+
+#headerImg a:hover{
+    text-decoration: none;
+    background-color: #bb0c4f;
+}
+
+/* ---------- */
+/* INDEX ROWS */
+/* ---------- */
+
+.indexRows{
+    height: 379px;
+}
+
+.indexRows .rowImg{
+    display: inline;
+    float: left;
+    height: 371px;
+    width: 60%;
+}
+
+.indexRows .rowButton{
+    position: relative;
+    display: inline;
+    float: right;
+    height: 371px;
+    width: 40%;
+}
+
+.indexRows .container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.indexRows .button{
+    margin-top: 140px;
+}
+
+.indexRows a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: 4px solid black;
+    background-color: #ff4a90;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 14px 25px;
+    border-radius: 22px;
+}
+
+.indexRows a:hover{
+    text-decoration: none;
+    background-color: #bb0c4f;
+}
+
+.indexRows h1{
+    text-align: center;
+    margin-top: 33px;
+    font-size: 20px;
+    font-weight: 1000;
+    color: #ffffff;
+}
+
+/* ----- */
+/* ROW 1 */
+/* ----- */
+
+#indexRow1 .rowImg{
+    float: left;
+    background:url('/static/img/indexDiagnosticImg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#indexRow1 .rowButton{
+    background-color: #ff5370;
+    float: right;
+    
+}
+
+
+/* ----- */
+/* ROW 2 */
+/* ----- */
+
+#indexRow2 .rowImg{
+    background:url('/static/img/indexPlaylistImg.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    float: right;
+}
+
+#indexRow2 .rowButton{
+    background-color: #ff5370;
+    float: left;
+}
+
+/* ---------------------------------------------------------------------- */

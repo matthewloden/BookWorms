@@ -1,0 +1,244 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content=" ">
+    <meta name="keywords" content="Book Worms, Reading, Books">
+    <meta name="author" content="Raquel Barahona">
+    <title>BookWorms - Playlist</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/logoIcon.ico/')}}">
+    <style>
+    .container{
+    width:80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* ------- */
+/* Utility */
+/* ------- */
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#buttonToTop{
+    position:fixed;
+    z-index: 1;
+}
+
+#buttonToTop{
+    display: none;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: #ff4a90;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    animation: fadeIn .5s linear;
+}
+
+#buttonToTop:hover{
+    background-color: #bb0c4f;
+}
+   header{
+    background: rgb(255,85,113);
+    background: linear-gradient(90deg, #ff344b 0%, #ff6a97 100%);
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100px;
+}
+
+header img{
+    float: left;
+    height: 90px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+header nav{
+    margin-top: 40px;
+}
+
+header a{
+    color:#ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 16px;
+}
+
+header ul{
+    list-style: none;
+    text-align: center;
+}
+
+header li{
+    display: inline;
+    padding: 0px 20px 0px 20px;
+    display: inline-block;
+}
+
+header .current a{
+    color:#9b0040;
+}
+
+header a:hover{
+    color:#9b0040;
+}
+
+#space{
+    height: 100px;
+}
+    h1 {
+        text-shadow: 5px 5px black;
+        text-align: center;
+        font-size: xx-large;
+        font-style: bold;
+        color: #ffb4c4;
+    }
+    body{
+        font: 15px/1.5 'Lato', sans-serif;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        scroll-behavior: smooth;
+        padding: 0;
+        margin: 0;
+        background:url("{{ url_for('static', filename='img/headerImg.png') }}");
+    }
+    #bodycard {
+        font: 15px/1.5 'Lato', sans-serif;
+        align:center
+        margin-top: 25px;
+        padding: 1rem;
+        margin-left: 20rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        width: 60%;
+        height: auto;
+        border-radius: 25px;
+        border: 5px solid black;
+        top: 105px;
+        background-color: #ff6486;
+    }
+    #logoutcard {
+        font: 15px/1.5 'Lato', sans-serif;
+        align:center
+        margin-top: 25px;
+        padding: 1rem;
+        margin-left: 35rem;
+        margin-right: 1 rem;
+        margin-bottom: 1rem;
+        width: 30%;
+        height: auto;
+        border-radius: 25px;
+        border: 5px solid black;
+        top: 105px;
+        background-color: #ffb4c4;
+    }
+
+    </style> 
+</head>
+
+<body>
+    <!-- BUTTON TO TOP -->
+    <button id="buttonToTop">
+        <i class="material-icons" title="Return to top of page">expand_less</i>
+    </button>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="logo">
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('diagnostic') }}">Preferences</a></li>
+                    <li class="current"><a href="{{ url_for('playlist') }}">Playlist</a></li>
+                    <li><a href="{{ url_for('search') }}">Search</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="space"></section>
+
+    <h1 style=font-size:70px align="center"> Listen to these playlists while you read! </h1>
+    
+    <div id="bodycard">
+        <p align="center"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWZwtERXCS82H" 
+        width="800" height="680"  frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
+    </div>
+
+    <div id="bodycard">
+        <p align="center"><iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8NTLI2TtZa6" 
+        width="800" height="680" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
+    </div>
+    
+    <div id="bodycard">
+        <p align="center"><iframe src="https://open.spotify.com/embed/playlist/7p6aDKWx4ScF1t9sqWJ81p" 
+        width="800" height="680" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
+    </div>
+
+    <div id="bodycard">
+        <p align="center"><iframe src="https://open.spotify.com/embed/playlist/0VWZniq1LuS6pjZxulfQit" 
+        width="800" height="680"  frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
+    </div>
+
+    <div id="bodycard">
+        <p align="center"><iframe src="https://open.spotify.com/embed/playlist/3LFIBdP7eZXJKqf3guepZ1" 
+        width="800" height="680" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></p>
+    </div>
+
+    <section id="space"></section>
+
+    <div id="google_translate_element"></div>
+    <script>
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en'
+        }, 'google_translate_element');
+        }
+    </script>
+
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        const buttonToTop = document.querySelector("#buttonToTop");
+
+        buttonToTop.addEventListener("click", function(){
+            window.scrollTo({top: 0, left: 0, behavior: "smooth"});
+        });
+
+        var mybutton = document.getElementById("buttonToTop");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+            mybutton.style.display = "block";}
+        else {mybutton.style.display = "none";}
+        }
+    </script>
+
+</body>
+</html>
