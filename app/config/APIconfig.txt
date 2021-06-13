@@ -1,0 +1,14 @@
+Spotify
+
+Client ID 8a10a7df741b481fad99595af62208e9
+Client Secret 525833f5f47248d882954b8f8dac49bb
+
+NYT Books
+API KEY     yKLPISW4LPZZ6FV8yEODHYrpGiCKrmZp
+Secret      2cJRJNPDVmAUkoOg
+
+Google Books
+
+API key
+
+AIzaSyBMxOwEQKqyCuV40MVfhoHNJihIYOMYfc4

@@ -1,0 +1,19 @@
+{
+    "server_url": {
+        "portnum" : "3001",
+        "AbtUsport": "5002"
+     },
+ 
+ 
+     "dbconfiginfo": 
+         {
+             "host": "bestbooks-website.cgp1zreoxhvv.us-east-2.rds.amazonaws.com",
+             "dbname": "bkwormsDB", 
+             "schema": "dev",
+             "username":"bookWorms",
+             "password": "bestbooks921", 
+             "port" : "5432"
+ 
+         }
+ 
+ }
